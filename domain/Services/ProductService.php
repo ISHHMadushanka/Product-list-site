@@ -14,6 +14,12 @@ class ProductService
     }
 
 
+    public function get($item_id)
+    {
+        return $this->item->find($item_id);
+    }
+
+
     public function all()
     {
        return $this->item->all();
@@ -39,6 +45,17 @@ class ProductService
         $item->done = 1;
         $item->update();
 
+    }
+
+    public function update(array $data, $item_id)
+    {
+        $item = $this->item->find($item_id);
+        $item->update($this->edit($item, $data));
+    }
+
+    protected function edit(Product $item, $data)
+    {
+        return array_merge($item->toArray(), $data);
     }
 
 }

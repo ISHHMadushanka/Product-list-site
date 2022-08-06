@@ -11,7 +11,7 @@
             <a class="nav-link active" aria-current="page" href="{{ route('product') }}">Product List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ route('banner') }}">Banners</a>
+            <a class="nav-link active" aria-current="page" href="{{ route('banner') }}">Product Banners</a>
           </li>
         </ul>
         @if(Auth::user())

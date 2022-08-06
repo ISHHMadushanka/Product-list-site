@@ -35,4 +35,16 @@ class ProductController extends ParentController
         return redirect()->back();
     }
 
+    public function edit(Request $request)
+    {
+        $response['item'] = ProductFacade::get($request['item_id']);
+        return view('pages.product.edit')->with($response);
+    }
+
+    public function update(Request $request, $item_id)
+    {
+        ProductFacade::update($request->all(), $item_id);
+        return redirect()->back();
+    }
+
 }
