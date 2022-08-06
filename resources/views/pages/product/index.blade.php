@@ -46,7 +46,7 @@
                                 <td>{{ $item->price }}</td>
                                 <td>
                                     @if ($item->done == 0)
-                                     <span class="badge bg-warning">Inactive</span>
+                                    <span class="badge bg-warning">Inactive</span>
                                     @else
                                     <span class="badge bg-success">Active</span>
                                     @endif
